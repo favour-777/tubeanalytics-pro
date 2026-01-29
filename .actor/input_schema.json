@@ -1,0 +1,68 @@
+{
+    "title": "YouTube Channel Intelligence Pro",
+    "description": "Analyze any YouTube channel and discover their content strategy secrets",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+      "channelUrls": {
+        "title": "📺 YouTube Channel URLs",
+        "type": "string",
+        "description": "Enter YouTube channel URLs to analyze (one per line for batch analysis). Works with @handles or /c/ format.",
+        "editor": "textarea",
+        "example": "https://youtube.com/@mkbhd\nhttps://youtube.com/@mrbeast\nhttps://youtube.com/@veritasium",
+        "prefill": "https://youtube.com/@mkbhd"
+      },
+      "videoCount": {
+        "title": "🎬 Number of Recent Videos to Analyze",
+        "type": "integer",
+        "description": "How many recent videos to analyze per channel (more videos = deeper insights)",
+        "default": 20,
+        "minimum": 10,
+        "maximum": 100,
+        "editor": "number"
+      },
+      "includeTranscripts": {
+        "title": "📝 Include Transcript Analysis",
+        "type": "boolean",
+        "description": "Analyze video transcripts for deeper content insights (takes longer but provides keyword opportunities)",
+        "default": true,
+        "editor": "checkbox"
+      },
+      "analysisType": {
+        "title": "🎯 Analysis Focus",
+        "type": "string",
+        "description": "What aspect of the channel do you want to focus on?",
+        "editor": "select",
+        "default": "comprehensive",
+        "enum": [
+          "comprehensive",
+          "content_strategy",
+          "competitive_gaps",
+          "keyword_research",
+          "engagement_optimization"
+        ],
+        "enumTitles": [
+          "🌟 Comprehensive (Everything)",
+          "📊 Content Strategy (Topics & Trends)",
+          "🔍 Competitive Gaps (What's Missing)",
+          "🔑 Keyword Research (SEO Opportunities)",
+          "❤️ Engagement Optimization (Best Practices)"
+        ]
+      },
+      "compareWithCompetitors": {
+        "title": "🥊 Competitor Channel URLs (Optional)",
+        "type": "string",
+        "description": "Add competitor channels to compare against (one per line). Get competitive intelligence!",
+        "editor": "textarea",
+        "example": "https://youtube.com/@competitor1\nhttps://youtube.com/@competitor2"
+      },
+      "anthropicApiKey": {
+        "title": "🔑 Claude API Key (Optional)",
+        "type": "string",
+        "description": "Your Anthropic Claude API key for AI analysis. Leave empty to use shared credits (small fee applies).",
+        "editor": "textfield",
+        "isSecret": true
+      }
+    },
+    "required": ["channelUrls"]
+  }

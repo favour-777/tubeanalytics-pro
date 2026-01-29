@@ -1,0 +1,56 @@
+{
+    "actorSpecification": 1,
+    "name": "youtube-channel-intelligence",
+    "title": "YouTube Channel Intelligence Pro",
+    "description": "Decode any YouTube channel's content strategy with AI-powered competitive intelligence. Get trending topics, content gaps, keyword opportunities, and actionable insights to grow your channel faster.",
+    "version": "1.0.0",
+    "meta": {
+      "templateId": "python-start"
+    },
+    "input": "./INPUT_SCHEMA.json",
+    "dockerfile": "./Dockerfile",
+    "readme": "./README.md",
+    "categories": [
+      "SOCIAL_MEDIA",
+      "AI",
+      "BUSINESS_INTELLIGENCE"
+    ],
+    "storages": {
+      "dataset": {
+        "actorSpecification": 1,
+        "title": "Channel Intelligence Reports",
+        "views": {
+          "overview": {
+            "title": "Intelligence Overview",
+            "transformation": {
+              "fields": [
+                "channelName",
+                "channelUrl",
+                "videosAnalyzed",
+                "topTopic",
+                "avgViews",
+                "bestPostingDay",
+                "contentGapsFound",
+                "keywordOpportunities",
+                "reportUrl"
+              ]
+            },
+            "display": {
+              "component": "table",
+              "properties": {
+                "channelName": { "label": "Channel", "format": "text" },
+                "channelUrl": { "label": "URL", "format": "link" },
+                "videosAnalyzed": { "label": "Videos", "format": "number" },
+                "topTopic": { "label": "Top Topic", "format": "text" },
+                "avgViews": { "label": "Avg Views", "format": "number" },
+                "bestPostingDay": { "label": "Best Day", "format": "text" },
+                "contentGapsFound": { "label": "Gaps", "format": "number" },
+                "keywordOpportunities": { "label": "Keywords", "format": "number" },
+                "reportUrl": { "label": "Report", "format": "link" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
